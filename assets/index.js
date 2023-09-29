@@ -127,3 +127,22 @@ function finalInput() {
   resultsSection.classList.remove("hide");
   finalScore.textContent = score;
 }
+
+function saveInitials() {
+  const initials = initialsInput.value.trim();
+
+  if (initials !== "") {
+    var initialsInputText = initialsInput.value.trim();
+    if (initialsInputText === "") {
+      return alert("Please enter your intitials");
+    } else if (initialsInputText.length > 3) {
+      return alert("Please enter three letters only");
+    }
+
+    const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+    highscores.push({ initials, score });
+    localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    window.location.href = "highscores.html";
+  }
+}
