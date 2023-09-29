@@ -74,3 +74,30 @@ function displayQuestion() {
     choicesElement.appendChild(choiceElement);
   }
 }
+
+function checkAnswer(event) {
+  const selectedChoice = event.target;
+  const selectedAnswerIndex = parseInt(
+    selectedChoice.getAttribute("data-index")
+  );
+
+  if (selectedAnswerIndex === questions[currentQuestionIndex].correctAnswer) {
+    feedbackElement.textContent = "Correct!";
+    score++;
+  } else {
+    feedbackElement.textContent = "Wrong!";
+    time -= 10;
+  }
+
+  feedbackElement.classList.remove("hide");
+
+  currentQuestionIndex++;
+  if (currentQuestionIndex === questions.length) {
+    endQuiz();
+  } else {
+    setTimeout(() => {
+      feedbackElement.classList.add("hide");
+      displayQuestion();
+    }, 1000);
+  }
+}
