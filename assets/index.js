@@ -101,3 +101,29 @@ function checkAnswer(event) {
     }, 1000);
   }
 }
+
+function updateTimer() {
+  time--;
+  timerElement.textContent = time;
+
+  if (time <= 0) {
+    endQuiz();
+  }
+}
+
+function endQuiz() {
+  clearInterval(timerInterval);
+  document.getElementById("questions").classList.add("hide");
+  endScreenElement.classList.remove("hide");
+  document.getElementById("final-score").textContent = score;
+}
+
+startButton.addEventListener("click", startQuiz);
+
+submitButton.addEventListener("click", saveInitials);
+
+function finalInput() {
+  questionsSection.classList.add("hide");
+  resultsSection.classList.remove("hide");
+  finalScore.textContent = score;
+}
