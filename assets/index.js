@@ -59,3 +59,18 @@ function startQuiz() {
   timerInterval = setInterval(updateTimer, 1000);
   displayQuestion();
 }
+
+function displayQuestion() {
+  const currentQuestion = questions[currentQuestionIndex];
+  questionTitleElement.textContent = currentQuestion.question;
+  choicesElement.innerHTML = "";
+
+  for (let i = 0; i < currentQuestion.choices.length; i++) {
+    const choice = currentQuestion.choices[i];
+    const choiceElement = document.createElement("button");
+    choiceElement.textContent = choice;
+    choiceElement.setAttribute("data-index", i);
+    choiceElement.addEventListener("click", checkAnswer);
+    choicesElement.appendChild(choiceElement);
+  }
+}
