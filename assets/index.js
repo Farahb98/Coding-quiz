@@ -51,3 +51,11 @@ const feedbackElement = document.getElementById("feedback");
 const endScreenElement = document.getElementById("end-screen");
 const initialsInput = document.getElementById("initials");
 const submitButton = document.getElementById("submit");
+
+function startQuiz() {
+  startButton.style.display = "none";
+  document.getElementById("start-screen").classList.add("hide");
+  document.getElementById("questions").classList.remove("hide");
+  timerInterval = setInterval(updateTimer, 1000);
+  displayQuestion();
+}
