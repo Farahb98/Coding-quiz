@@ -28,4 +28,11 @@ Explain how to use your project. Provide examples or code snippets if applicable
 
 MIT
 
-## Additional Sections (optional)
+## Additional Sections 
+Git URL: https://github.com/Farahb98/Coding-quiz.git
+Deployed URL: https://farahb98.github.io/Coding-quiz/
+
+
+
+![image](https://github.com/Farahb98/Coding-quiz/assets/136191926/a8cfd930-a4f9-4074-90f7-342ba8b17227)
+
