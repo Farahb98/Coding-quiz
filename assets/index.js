@@ -38,3 +38,16 @@ const questions = [
     correctAnswer: 0,
   },
 ];
+
+let currentQuestionIndex = 0;
+let time = 60;
+let score = 0;
+let timerInterval;
+const timerElement = document.getElementById("time");
+const questionTitleElement = document.getElementById("question-title");
+const choicesElement = document.getElementById("choices");
+const startButton = document.getElementById("start");
+const feedbackElement = document.getElementById("feedback");
+const endScreenElement = document.getElementById("end-screen");
+const initialsInput = document.getElementById("initials");
+const submitButton = document.getElementById("submit");
